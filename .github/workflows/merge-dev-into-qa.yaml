@@ -20,7 +20,7 @@ jobs:
       - name: Merge
         shell: bash
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           pr_url="$(gh pr create -B qa --head dev --title "Your PR title" --fill-first)"
           gh pr merge --auto --squash "$pr_url"
