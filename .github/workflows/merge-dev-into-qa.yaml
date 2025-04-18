@@ -2,6 +2,8 @@ name: Merge dev into qa
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "20 7 * * *"
 
 
 jobs:
