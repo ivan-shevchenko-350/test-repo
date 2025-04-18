@@ -13,4 +13,4 @@ runs:
       with:
         GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
         pass_on_octokit_error: false
-        configuration_path: pr-title-checker-config.json
+        configuration_path: .github/actions/pr-simple-validation/pr-title-checker-config.json
