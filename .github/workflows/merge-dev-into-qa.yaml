@@ -22,5 +22,5 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          pr_url="$(gh pr create -B qa --head dev --title "Your PR title" --fill-first)"
+          pr_url="$(gh pr create -B qa --head dev --title "Your PR title" --body "")"
           gh pr merge --auto --squash "$pr_url"
