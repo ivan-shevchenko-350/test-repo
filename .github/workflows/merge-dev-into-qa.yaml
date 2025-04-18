@@ -19,7 +19,7 @@ jobs:
 #          commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'
       - name: Merge
         shell: bash
-        with:
+        env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           pr_url="$(gh pr create -B qa --head dev --title "Your PR title" --fill-first)"
