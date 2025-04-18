@@ -11,9 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: everlytic/branch-merge@1.1.2
-        with:
-          github_token: ${{ github.token }}
-          source_ref: 'dev'
-          target_branch: 'qa'
-          commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'
+#      - uses: everlytic/branch-merge@1.1.2
+#        with:
+#          github_token: ${{ secrets.GH_TOKEN }}
+#          source_ref: 'dev'
+#          target_branch: 'qa'
+#          commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'
+      - name: Merge
+        shell: bash
+        run: |
+          git checkout qa
+          git merge dev
+          git push 
