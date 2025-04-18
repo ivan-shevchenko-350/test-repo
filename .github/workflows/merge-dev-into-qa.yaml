@@ -20,6 +20,5 @@ jobs:
       - name: Merge
         shell: bash
         run: |
-          git checkout qa
-          git merge dev
-          git push 
+          pr_url="$(gh pr create -B qa --head dev --title "Your PR title" --fill-first)"
+          gh pr merge --auto --squash "$pr_url"
