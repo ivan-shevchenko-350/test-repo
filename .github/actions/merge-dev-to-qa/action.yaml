@@ -15,4 +15,4 @@ runs:
         GH_TOKEN: ${{ inputs.GITHUB_TOKEN }}
       run: |
         pr_url="$(gh pr create -B qa --head dev --title "[Automated] Merged dev into target qa" --body "")"
-        gh pr merge --auto --squash "$pr_url"
+        gh pr merge --auto "1" --squash "$pr_url"
