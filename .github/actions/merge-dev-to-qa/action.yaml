@@ -12,7 +12,7 @@ runs:
     - name: Merge Dev into qa
       shell: bash
       env:
-        GH_TOKEN: ${{ github.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ inputs.GITHUB_TOKEN }}
       run: |
         pr_url="$(gh pr create -B qa --head dev --title "[Automated] Merged dev into target qa" --body "")"
         gh pr merge --auto --squash "$pr_url"
