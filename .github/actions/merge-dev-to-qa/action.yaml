@@ -15,4 +15,9 @@ runs:
         GH_TOKEN: ${{ inputs.GITHUB_TOKEN }}
       run: |
         pr_url="$(gh pr create -B qa --head dev --title "[Automated] Merged dev into target qa" --body "")"
-        gh pr merge --admin --merge "$pr_url"
+        RESULT=$?
+        if [ $RESULT -eq 0 ]; then
+          gh pr merge --admin --merge "$pr_url"
+        else
+          echo "No diff"
+        fi
