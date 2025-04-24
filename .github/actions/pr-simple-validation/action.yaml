@@ -13,4 +13,5 @@ runs:
       with:
         GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
         pass_on_octokit_error: false
-        configuration_path: .github/actions/pr-simple-validation/pr-title-checker-config.json
+        github_configuration_repo: ivan-shevchenko-350
+        github_configuration_path: .github/actions/pr-simple-validation/pr-title-checker-config.json
